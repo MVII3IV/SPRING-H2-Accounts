@@ -1,0 +1,3 @@
+INSERT INTO accounts (bank, card_number, debt, cut_day, pay_day, credit_limit, customer_service_phone) VALUES ('BANCOMER', '5358 7502 0335 5001 790', 3799.34, '2015-10-09', '2015-10-29', 11000, '01 800 253 0765');
+INSERT INTO accounts (bank, card_number, debt, cut_day, pay_day, credit_limit, customer_service_phone) VALUES ('BANAMEX', '5288 4305 8892 8699 285', 0, '2015-10-23', '2015-10-15', 8700, '01 800 110 3990');
+INSERT INTO accounts (bank, card_number, debt, cut_day, pay_day, credit_limit, customer_service_phone) VALUES ('SANTANDER', '5470 4670 0746 8905 344', 0, '2015-10-06', '2015-10-26', 11000, '01 800 501 0000');

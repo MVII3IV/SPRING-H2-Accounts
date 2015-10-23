@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Justified Nav Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="justified-nav.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="container" ng-controller="mainController">
+
+
+      <div class="masthead">
+        <h3 class="text-muted">Bienvenido Erick</h3>
+        <nav>
+          <ul class="nav nav-justified">
+            <li class="active"><a href="#">Inicio</a></li>
+            <li><a href="#">Cuentas</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">historial</a></li>
+            <li><a href="#">Acerca de</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+        <h1>Marketing stuff!</h1>
+        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
+      </div>
+
+
+
+
+
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Tus tarjetas</div>
+
+        <!-- Table -->
+        <table class="table">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Banco</th>
+            <th>No.</th>
+            <th>Saldo</th>
+            <th>fecha de corte</th>
+            <th>Fecha de pago</th>
+            <th>Limite de credito</th>
+            <th>Tel. Atencion a clientes</th>
+          </tr>
+
+            </thead>
+            <tbody>
+
+              <tr ng-repeat="account in accounts">
+                <th scope="row">{{account.id}}</th>
+                <td>{{account.bank}}</td>
+                <td>{{account.cardNumber}}</td>
+                <td>{{account.debt}}</td>
+                <td>{{account.cutDay}}</td>
+                <td>{{account.payDay}}</td>
+                <td>{{account.creditLimit}}</td>
+                <td>{{account.customerServicePhone}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+      </div>
+
+
+
+
+
+      <!-- Site footer -->
+      <footer class="footer">
+        <p>&copy; Erick dominguez 2015</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="bootstrap.js"></script>
+    <script type="text/javascript" src="angular.js"></script>
+
+    <script>
+      var app = angular.module("app",[]);
+
+      app.controller("mainController", function($scope,$http){
+
+
+        $http.get("/accounts").success(function (data) {
+                 $scope.accounts = data;
+       	});
+
+
+      });
+    </script>
+
+  </body>
+</html>
